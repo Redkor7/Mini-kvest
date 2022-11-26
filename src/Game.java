@@ -25,12 +25,11 @@ public class Game {
 
             while (true) {
                 variant = in.nextInt();
-                if (variant > story.situations.length){
+                if (variant > story.situations[i].variants || variant <= 0){
                     System.out.println("Вы можете выбирать из " + story.situations[i].variants + " вариантов");
                     continue;
                 }
 
-   //           story.go(variant);
                 manager.H += story.situations[i].direction[variant - 1].dH;
                 manager.T += story.situations[i].direction[variant - 1].dT;
                 manager.Hu += story.situations[i].direction[variant - 1].dHu;
@@ -45,5 +44,4 @@ public class Game {
             }
         }
     }
-
 }
